@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Inheritance {
+    
+    class Employee {
+        
+        
+        public int eno;
+        public string ename;
+        public Employee (int a1, string b1)
+        {
+            eno=a1;
+            ename=b1;
+        }
+        public void display()
+        {
+            Console.WriteLine("Employee Details:::::::::::::::");
+            Console.WriteLine("Employee no:\t"+eno);
+            Console.WriteLine("Employee name:\t"+ename);
+            Console.WriteLine("===============================");
+            
+        }
+    }
+    
+    class TeachingStaff : Employee {
+        string dept;
+        public TeachingStaff ( int a1, string b1, string c1 )
+              : base (a1, b1)
+              {
+                  dept=c1;
+              }
+              public void display1()
+              {
+                  
+            Console.WriteLine("Staff Details:");
+            Console.WriteLine("Staff no:\t"+eno);
+            Console.WriteLine("Staff name:\t"+ename);
+            Console.WriteLine("Staff Department:\t"+dept);
+              }
+    }
+ class main {
+     public static void Main (string[] args)
+     {
+          int e1;
+          string f1;
+          string d1;
+          
+         Console.Write("Enter no:");
+         e1=int.Parse(Console.ReadLine());
+         Console.Write("Enter name:");
+         f1=Console.ReadLine();
+         Console.Write("Enter Department:");
+         d1=Console.ReadLine();
+         
+         TeachingStaff ts1 = new TeachingStaff(e1,f1, d1);
+         ts1.display();
+         ts1.display1();
+         
+         Console.ReadKey();
+     }
+ }
+    
+}
